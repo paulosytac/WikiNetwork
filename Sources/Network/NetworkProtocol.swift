@@ -7,6 +7,7 @@
 
 public protocol NetworkResponse: Codable { }
 
+@MainActor
 public protocol NetworkProtocol {
     func request<ResponseType: NetworkResponse>(_ request: NetworkRequest<ResponseType>) async throws -> ResponseType
 }
